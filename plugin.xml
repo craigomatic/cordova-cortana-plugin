@@ -11,9 +11,5 @@
         <js-module src="src/windows/CortanaProxy.js" name="CortanaProxy">
             <runs target="" />
         </js-module>
-
-        <config-file target="package.phone.appxmanifest" parent="/Package/Capabilities">
-            <DeviceCapability Name="microphone" />
-        </config-file>
     </platform>
 </plugin>
