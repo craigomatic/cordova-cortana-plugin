@@ -15,7 +15,7 @@ module.exports = {
         Windows.Storage.StorageFile.getFileFromApplicationUriAsync(vcdFilePath).then(
             // Success function.
             function (vcdStorageFile) {
-                Windows.Media.SpeechRecognition.VoiceCommandManager.installCommandSetsFromStorageFileAsync(vcdStorageFile).then(
+                Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinitionManager.installCommandDefinitionsFromStorageFileAsync(vcdStorageFile).then(
                     success,
                     function(err) {
                         error(err);
@@ -34,7 +34,7 @@ module.exports = {
             vcdListId = args[1];
             vcdListValues = args[2];
 
-        commandSet = Windows.Media.SpeechRecognition.VoiceCommandManager.installedCommandSets.lookup(vcdSetId);
+        commandSet = Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinitionManager.installedCommandDefinitions.lookup(vcdSetId);
         commandSet.setPhraseListAsync(vcdListId, vcdListValues).then(
             success,
             function(err) {
